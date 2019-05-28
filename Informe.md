@@ -47,7 +47,7 @@ _Definir dataframe, árboles binarios._
   - Diseño de UI
   - Diseño de TDA N (tipo de dato abstracto)
     - biotree
-    - hashup
+    - hashtable
     - pila
   - Diagrama de componentes
   - Diagrama de clases (bajo nivel)
