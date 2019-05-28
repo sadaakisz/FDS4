@@ -30,7 +30,7 @@ _Definir dataframe, árboles binarios._
 
 ### Cronograma de trabajo
 
-- Milestone1:     *Jueves 6*
+- Milestone1:
   - Crear repo
   - Crear proyecto
   - Editar informe
