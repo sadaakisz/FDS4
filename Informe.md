@@ -30,4 +30,24 @@ _Definir dataframe, árboles binarios._
 
 ### Cronograma de trabajo
 
-
+- Milestone1:     *Jueves 6*
+  - Crear repo
+  - Crear proyecto
+  - Editar informe
+    - Intro
+    - Objetivos
+    - Marco Conceptual
+    - Diagrama de clase
+    - Cronograma
+- Milestone2:
+  - Implementación de clases
+    - Designar dependencias
+    - Asignar clases
+    - Implementar clase N
+  - Diseño de UI
+  - Diseño de TDA N (tipo de dato abstracto)
+    - biotree
+    - hashup
+    - pila
+  - Diagrama de componentes
+  - Diagrama de clases (bajo nivel)
