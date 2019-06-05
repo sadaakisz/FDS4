@@ -5,9 +5,9 @@ Trabajo Final
 -------------
 
 ### Equipo de Trabajo
-* Carlos Mazzarri
-* Alonso Leyva
-* Hector Suzuki
+* Mazzarri, Carlos
+* Leyva, Alonso
+* Suzuki, Hector
 
 ### Introducción
 
