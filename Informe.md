@@ -11,7 +11,7 @@ Trabajo Final
 
 ### Introducción
 
-_Motivación, problema, solución, conclusiones*_
+El problema radica en que el lenguaje de programación C++ no posee una biblioteca que contenga la implementación del tipo de dato abstracto Data Frame, y por lo tanto no se puede realizar una manipulación de datos con indexación, como lo hace la biblioteca _pandas_ del lenguaje Python. Por lo tanto, la solución propuesta es el desarrollo de una biblioteca que permita lo mencionado para el lenguaje C++. Esta solución incluye la implementación de funcionalidades como importación de datos, indexado, selección, filtrado (en base a diversos criterios) y ordenamiento de datos por columnas, además de exportación de estos datos archivos planos. Este proyecto se desarrollará considerando el ámbito de programación orientada a objetos (POO), y se utilizará la plataforma _GitHub_ para la gestión de versiones.
 
 ### Objetivos
 
@@ -45,10 +45,6 @@ A property of a binary tree that is sometimes important is that the depth of an 
 binary tree is considerably smaller than N. (...) The average depth is
 O(√N), and that for a special type of binary tree, namely the binary search tree, the average
 value of the depth is O(log N). Unfortunately, the depth can be as large as N − 1. (...)" (Weiss, 2014, p. 126).</sup>
-
-
-
-
 
 ### Diagrama de clases (alto nivel)
 
