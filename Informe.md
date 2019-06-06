@@ -51,7 +51,7 @@ value of the depth is O(log N). Unfortunately, the depth can be as large as N âˆ
 
 ### Diagrama de clases (alto nivel)
 
-[[https://github.com/sadaakisz/FDS4/blob/master/DiagramadeClaseAltoNivel.PNG]]
+![DiagClase](DiagramadeClaseAltoNivel.PNG)
 
 ### Cronograma de trabajo
 
