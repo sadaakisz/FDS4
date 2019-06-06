@@ -17,7 +17,7 @@ El problema radica en que el lenguaje de programación C++ no posee una bibliote
 
 _Objetivo general_
 
-Nuestro objetivo general en este proyecto es crear una biblioteca en Visual Studios, en el lenguaje C++,  que permita el uso de data frames. Usaremos toda la teoría y conocimiento obtenido durante el curso, y usando como referencia los “panda data frames” del lenguaje de programación Python, para poder crear funciones de manera más eficiente
+Nuestro objetivo general en este proyecto es crear una biblioteca en Visual Studio, en el lenguaje C++, que permita el uso de data frames. Usaremos toda la teoría y conocimiento obtenido durante el curso, y usando como referencia los “panda data frames” del lenguaje de programación Python, para poder crear funciones de manera más eficiente.
 
 
 _Objetivos específicos: analizar, diseñar, desarrollar solución._
