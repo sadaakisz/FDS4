@@ -34,7 +34,7 @@ Un “Data frame” es una tabla, o una estructura con forma de un arreglo bidim
 En el lenguaje de programación R, un data frame es una lista de “vectores columna”. A diferencia de un arreglo, la data que guardas en las columnas de un data frame puede ser de varios tipos. Por ejemplo, una columna puede ser una variable numérica, otra puede ser un carácter variable y una tercera podría ser un elemento cualquiera. Todas las columnas tienen que poseer el mismo tamaño. King, W(2016)<sup>1</sup>
 
 **Árbol binario:**
-Los árboles binarios son estructuras que poseen una gran cantidad de ventajas a la hora de programar. En lo referente a este término, Aguilar indica lo siguiente:
+Los árboles binarios son estructuras que poseen una gran cantidad de ventajas a la hora de programar. En lo referente a este término, Aguilar (2007) indica lo siguiente:
 
 >“El árbol es una estructura de datos muy importante en informática y en ciencias de     la computación. Los árboles son estructuras no    lineales, al contrario que los arrays     y las listas enlazadas que constituyen estructuras lineales. La estructura de datos            árbol    generaliza las estructuras lineales vistas en capítulos anteriores. Los árboles se utilizan para representar fórmulas          algebraicas, para   organizar objetos en orden de tal forma que las búsquedas son muy eficientes, y en aplicaciones diversas tales      como inteligencia    artificial o algoritmos de cifrado. Casi todos los sistemas operativos almacenan sus archivos en árboles o          estructuras similares a    árboles. Además de las aplicaciones citadas, los árboles se utilizan en diseño de compiladores, proceso de    texto y algoritmos de    búsqueda.” (p. 489)
 
