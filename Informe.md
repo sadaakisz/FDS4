@@ -51,7 +51,7 @@ value of the depth is O(log N). Unfortunately, the depth can be as large as N âˆ
 
 ### Diagrama de clases (alto nivel)
 
-![DiagClase](DiagramadeClaseAltoNivel.PNG)
+![DiagClase](DClase.PNG)
 
 ### Cronograma de trabajo
 
