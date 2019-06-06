@@ -19,7 +19,12 @@ _Objetivo general: responder al problema y le da solución._
 
 _Objetivos específicos: analizar, diseñar, desarrollar solución._
 
-
+- Definir el marco conceptual de dataframe y árboles binarios.
+- Interpretar los conceptos investigados aplicados a nuestro proyecto.
+- Desarrollar las funcionalidades de pandas en C++ utilizando las estructuras investigadas previamente como referencia.
+- Inspeccionar el funcionamiento correcto de los módulos solicitados por el proyecto.
+- Demostrar la gestión de datos eficiente por nuestro programa.
+- Proponer mejoras funcionales y optimizaciones a nuestro código. 
 
 ### Marco Conceptual
 
