@@ -80,5 +80,5 @@ value of the depth is O(log N). Unfortunately, the depth can be as large as N âˆ
 
 <sup>2</sup> Aguilar, J. _Estructura de datos en C++_ (2007) Recuperado de http://subdesarrollando.com.ar/wp-content/uploads/2015/10/Estructura.de_.datos_.en_.C.Joyanes.pdf [Consulta: 5 de junio de 2019]
 
-<sup>3</sup> Weiss, M. (2014) _Data Structures and Algorithm Analysis in C++_ Recuperado de http://iips.icci.edu.iq/images/exam/DataStructuresAndAlgorithmAnalysisInCpp_2014.pdf
+<sup>3</sup> Weiss, M. (2014) _Data Structures and Algorithm Analysis in C++_ Recuperado de http://iips.icci.edu.iq/images/exam/DataStructuresAndAlgorithmAnalysisInCpp_2014.pdf [Consulta: 5 de junio de 2019]
 
