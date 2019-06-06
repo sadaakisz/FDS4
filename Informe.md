@@ -27,7 +27,7 @@ _Definir dataframe, árboles binarios._
 
 Un “Data frame” es una tabla, o una estructura con forma de un arreglo bidimensional, en que cada columna contiene medidas en una variable, y cada fila contiene un caso. Un “caso” no necesariamente es igual como un objeto experimental o unidad, aunque a veces son lo mismo. 
 
-En el lenguaje de programación R, un data frame es una lista de “vectores columna”. A diferencia de un arreglo, la data que guardas en las columnas de un data frame puede ser de varios tipos. Por ejemplo, una columna puede ser una variable numérica, otra puede ser un carácter variable y una tercera podría ser un elemento cualquiera. Todas las columnas tienen que poseer el mismo tamaño. King, W(2016)^1^
+En el lenguaje de programación R, un data frame es una lista de “vectores columna”. A diferencia de un arreglo, la data que guardas en las columnas de un data frame puede ser de varios tipos. Por ejemplo, una columna puede ser una variable numérica, otra puede ser un carácter variable y una tercera podría ser un elemento cualquiera. Todas las columnas tienen que poseer el mismo tamaño. King, W(2016)<sup>1<sup>
 
 
 
@@ -62,4 +62,4 @@ En el lenguaje de programación R, un data frame es una lista de “vectores col
   
 ### Referencias Bibliográficas
 
-^1^ King, W(2016) Recuperado de : http://ww2.coastal.edu/kingw/statistics/R-tutorials/dataframes.html
+<sup>1<sup> King, W(2016) Recuperado de : http://ww2.coastal.edu/kingw/statistics/R-tutorials/dataframes.html
