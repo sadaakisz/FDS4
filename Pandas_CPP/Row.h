@@ -2,35 +2,48 @@
 #include <vector>
 #include "Cell.h"
 class row {
-private:
+protected:
 	long long index;
-	vector<cell*>*Rvector;
+	vector<cell*>*Cvector;
 	vector<cell*>::iterator it;
 public:
-	row(long long i): index(i) {
-		Rvector = new vector<cell*>;
-		it = Rvector->begin();
+	row(long long i) : index(i) {
+		Cvector = new vector<cell*>;
+		it = Cvector->begin();
 	}
 	~row() {
-		for (cell* c : *Rvector)
+		for (cell* c : *Cvector)
 			delete c;
-		delete Rvector;
+		delete Cvector;
 	}
 
 	void setIndex(long long i) { index = i; }
 	long long getIndex() { return index; }
 
+	void upIterator() { it = Cvector->begin(); }
+
 	void push_back(cell *c) {
-		Rvector->push_back(c);
+		Cvector->push_back(c);
 	}
-	void insert(string type, string data, long long pos) {
-		Rvector->insert(it + pos, new cell(type, data));
+	void insert(cell* c, long long pos) {
+		upIterator();
+		Cvector->insert(it + pos, c);
 	}
 	void erase(long long pos) {
-		Rvector->erase(it + pos);
+		upIterator();
+		Cvector->erase(it + pos);
 	}
 	void erase(long long first, long long last) {
-		Rvector->erase(it+first,it+last);
+		upIterator();
+		Cvector->erase(it + first, it + last);
 	}
-	cell* at(long long pos) { return Rvector->at(pos); }
+	cell* at(long long pos) { return Cvector->at(pos); }
+
+	void printR() {
+		cout << " " << index << "\t";
+		for (long long i = 0; i < Cvector->size(); i++) {
+			Cvector->at(i)->printC();
+		}
+		cout << endl;
+	}
 };
