@@ -37,7 +37,7 @@ public:
 	row* at(long long pos) { return Rvector->at(pos); }
 
 	void printD() {
-		for (long long i; i < Rvector->size(); i++) {
+		for (long long i=0; i < Rvector->size(); i++) {
 			Rvector->at(i)->printR();
 		}
 	}
