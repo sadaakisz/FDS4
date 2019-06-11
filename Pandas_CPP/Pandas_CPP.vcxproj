@@ -129,8 +129,11 @@
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Column.h" />
+    <ClInclude Include="Columna2.h" />
     <ClInclude Include="Dataframe.h" />
+    <ClInclude Include="DataFrame2.h" />
     <ClInclude Include="Driver.h" />
+    <ClInclude Include="Fila2.h" />
     <ClInclude Include="Row.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
