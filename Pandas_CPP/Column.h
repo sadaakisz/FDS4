@@ -1,33 +1,32 @@
 #pragma once
 #include <vector>
 #include "Cell.h"
-class row {
+class column {
 protected:
-	long long index;
-	vector<cell*>*Cvector;
-	vector<cell*>::iterator it;
+	string name;
+	vector<cell**>*Cvector;
+	vector<cell**>::iterator it;
 public:
-	row(long long i) : index(i) {
-		Cvector = new vector<cell*>;
+	column(string s) : name(s) {
+		Cvector = new vector<cell**>;
 		it = Cvector->begin();
 	}
-	~row() {
-		for (cell* c : *Cvector)
+	~column() {
+		for (cell** c : *Cvector)
 			delete c;
 		delete Cvector;
 	}
-
-	void setIndex(long long i) { index = i; }
-	long long getIndex() { return index; }
+	void setName(string s) { name = s; }
+	string getName() { return name; }
 
 	void upIterator() { it = Cvector->begin(); }
 
 	void push_back(cell *c) {
-		Cvector->push_back(c);
+		Cvector->push_back(&c);
 	}
 	void insert(cell* c, long long pos) {
 		upIterator();
-		Cvector->insert(it + pos, c);
+		Cvector->insert(it + pos, &c);
 	}
 	void erase(long long pos) {
 		upIterator();
@@ -37,12 +36,12 @@ public:
 		upIterator();
 		Cvector->erase(it + first, it + last);
 	}
-	cell* at(long long pos) { return Cvector->at(pos); }
-	cell**atPoint(long long pos) { return &Cvector->at(pos); }
-	void printR() {
-		cout << " " << index << "\t";
+	cell* at(long long pos) { return (*Cvector->at(pos)); }
+
+	void printC() {
+		cout << " " << name << "\t";
 		for (long long i = 0; i < Cvector->size(); i++) {
-			Cvector->at(i)->printC();
+			(*Cvector->at(i))->printC();
 		}
 		cout << endl;
 	}
