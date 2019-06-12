@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include "Driver.h"
+#include "DataFrame2.h"
 using namespace std;
 int main() {
 	/*
@@ -35,12 +36,20 @@ int main() {
 	cout << co4->getName() << "\t" << co4->at(0)->getDataS() << endl;
 	*/
 	
-	driver* driver1 = new driver();
-	driver1->addFile("exampledb.csv"); //
+	//driver* driver1 = new driver();
+	//driver1->addFile("exampledb.csv"); //
+	//
+	////cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
+	//driver1->print();
 	
-	//cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
-	driver1->print();
-	
+	DF *dataF = new DF();
+	for (short i = 0; i < 3; i++) {
+		/*if (dataF->Columnas->at(i)->getTipo() == "Long") //terminar
+			dataF->Columnas->agre*/
+	}
+	dataF->agregarFila(new Fila(0));
+	dataF->mostrar();
+
 	_getch();
 	return 0;
 }
