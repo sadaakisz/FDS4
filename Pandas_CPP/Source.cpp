@@ -1,8 +1,11 @@
 #include <iostream>
 #include <conio.h>
 #include "Driver.h"
+#include "DataFrame2.h"
+#include <ctime>
 using namespace std;
 int main() {
+	srand(time(NULL));
 	/*
 	dataframe* d1 = new dataframe();
 	row* r1 = new row(0);
@@ -35,12 +38,17 @@ int main() {
 	cout << co4->getName() << "\t" << co4->at(0)->getDataS() << endl;
 	*/
 	
-	driver* driver1 = new driver();
-	driver1->addFile("exampledb.csv"); //
+	//driver* driver1 = new driver();
+	//driver1->addFile("exampledb.csv"); //
+	//
+	////cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
+	//driver1->print();
 	
-	//cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
-	driver1->print();
-	
+	DF *dataF = new DF();
+	dataF->agregarFila();
+	dataF->agregarFila();
+	dataF->mostrar();
+
 	_getch();
 	return 0;
 }
