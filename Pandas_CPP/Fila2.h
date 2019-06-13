@@ -55,6 +55,7 @@ public:
 			datoDouble = ColDouble->getDato(this->indice);
 		if (ColBool != nullptr)
 			datoBool = ColBool->getDato(this->indice);
+		
 	}
 
 	long long getIndice() { return this->indice; }

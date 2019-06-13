@@ -22,7 +22,7 @@ public:
 		datosString = new vector<string>;
 					  //Agregando 2 "palabras" aleatorias con propósitos de prueba
 		agregar("asdf");
-		
+		agregar("jklm");
 	}
 
 	~ColumnaString() {
@@ -68,8 +68,8 @@ private:
 public:
 	ColumnaDouble(): Columna("Double") {
 		datosDouble = new vector<double>;
-		agregar((rand() % 100000)+ rand()%11/10 );  //Agregando 2 doubles aleatorios con propósitos de prueba
-		agregar((rand() % 100000) + rand() % 11 / 10);
+		agregar((rand() % 100000)+ rand()%11/10.0 );  //Agregando 2 doubles aleatorios con propósitos de prueba
+		agregar((rand() % 100000) + rand() % 11 / 10.0);
 	}
 
 	~ColumnaDouble() {
@@ -92,6 +92,7 @@ private:
 public:
 	ColumnaBool() : Columna("Bool") {
 		datosBool = new vector<bool>;
+		agregar(rand() % 2);
 		agregar(rand() % 2);
 	}
 

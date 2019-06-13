@@ -21,8 +21,8 @@ public:
 	}
 
 	void agregarFila() {
-		long long ind = 0;
-		Fila* aux = new Fila(ind);
+		
+		Fila* aux = new Fila(numFilas);
 		Filas->push_back(aux);
 		for (long long i = 0; i < numColumnas; i++) {
 			if (Columnas->at(i)->getTipo() == "String")
@@ -36,7 +36,7 @@ public:
 		}
 		aux->AsignarDatos();
 		numFilas++;
-		ind++;
+		
 	}
 
 	void agregarColumnaString() {
@@ -60,7 +60,7 @@ public:
 	}
 
 	void mostrar() { //Borrar más adelante etc
-		cout << "String \t Long \t Double \t Bool" << endl; //Falta hacer que se alineen bien los nombres de las columnas
+		cout << "String \t\t Long \t\t Double \t\t Bool" << endl; //Falta hacer que se alineen bien los nombres de las columnas
 		for (long long i = 0; i < numFilas; i++) {
 			Filas->at(i)->mostrar();
 		}
