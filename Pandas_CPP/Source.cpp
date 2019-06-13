@@ -2,8 +2,10 @@
 #include <conio.h>
 #include "Driver.h"
 #include "DataFrame2.h"
+#include <ctime>
 using namespace std;
 int main() {
+	srand(time(NULL));
 	/*
 	dataframe* d1 = new dataframe();
 	row* r1 = new row(0);
@@ -43,11 +45,8 @@ int main() {
 	//driver1->print();
 	
 	DF *dataF = new DF();
-	for (short i = 0; i < 3; i++) {
-		/*if (dataF->Columnas->at(i)->getTipo() == "Long") //terminar
-			dataF->Columnas->agre*/
-	}
-	dataF->agregarFila(new Fila(0));
+	dataF->agregarFila();
+	dataF->agregarFila();
 	dataF->mostrar();
 
 	_getch();

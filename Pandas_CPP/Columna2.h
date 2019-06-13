@@ -2,9 +2,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-/*NUEVO: 
-Funciones agregar en cada columna
-Funciones get en cada columna*/
+
 class Columna {
 protected:
 	string tipoDeDato;
@@ -18,96 +16,94 @@ public:
 
 class ColumnaString : public Columna {
 private:
-	vector<string*>* datosString;
+	vector<string>* datosString;
 public:
 	ColumnaString(): Columna("String") {
-		datosString = new vector<string*>;
+		datosString = new vector<string>;
+					  //Agregando 2 "palabras" aleatorias con propósitos de prueba
+		agregar("asdf");
+		
 	}
 
 	~ColumnaString() {
-		for (string* s: *datosString) {
-			delete s;
-		}
 		delete datosString;
 	}
 
-	void agregar(string* s) {
+	void agregar(string s) {
 		datosString->push_back(s);
 	}
 
 	string getDato(int indice) {
-		return *datosString->at(indice);
+		return datosString->at(indice);
 	}
 };
 
 class ColumnaLong : public Columna {
 private:
-	vector<long long*>* datosLong;
+	vector<long long>* datosLong;
 public:
 	ColumnaLong():Columna("Long") {
-		datosLong = new vector<long long*>;
+		datosLong = new vector<long long>;
+		agregar(rand() % 1000000); //Agregando 2 long longs aleatorios con propósitos de prueba
+		agregar(rand() % 1000000);
 	}
 
 	~ColumnaLong() {
-		for (long long* s : *datosLong) {
-			delete s;
-		}
+		
 		delete datosLong;
 	}
 
-	void agregar(long long* l) {
+	void agregar(long long l) {
 		datosLong->push_back(l);
 	}
 
 	long getDato(int indice) {
-		return *datosLong->at(indice);
+		return datosLong->at(indice);
 	}
 };
 
 class ColumnaDouble : public Columna {
 private:
-	vector<double*>* datosDouble;
+	vector<double>* datosDouble;
 public:
 	ColumnaDouble(): Columna("Double") {
-		datosDouble = new vector<double*>;
+		datosDouble = new vector<double>;
+		agregar((rand() % 100000)+ rand()%11/10 );  //Agregando 2 doubles aleatorios con propósitos de prueba
+		agregar((rand() % 100000) + rand() % 11 / 10);
 	}
 
 	~ColumnaDouble() {
-		for (double* d : *datosDouble) {
-			delete d;
-		}
+		
 		delete datosDouble;
 	}
 
-	void agregar(double* d) {
+	void agregar(double d) {
 		datosDouble->push_back(d);
 	}
 
 	double getDato(int indice) {
-		return *datosDouble->at(indice);
+		return datosDouble->at(indice);
 	}
 };
 
 class ColumnaBool : public Columna {
 private:
-	vector<bool*>* datosBool;
+	vector<bool>* datosBool;
 public:
 	ColumnaBool() : Columna("Bool") {
-		datosBool = new vector<bool*>;
+		datosBool = new vector<bool>;
+		agregar(rand() % 2);
 	}
 
 	~ColumnaBool() {
-		for (bool *b : *datosBool) {
-			delete b;
-		}
 		delete datosBool;
 	}
 
-	void agregar(bool* b) {
+	void agregar(bool b) {
 		datosBool->push_back(b);
 	}
 
 	bool getDato(int indice) {
-		return *datosBool->at(indice);
+		return datosBool->at(indice);
 	}
 };

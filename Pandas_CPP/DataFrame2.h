@@ -1,14 +1,11 @@
 #pragma once
 #include "Columna2.h"
 #include "Fila2.h"
-/*NUEVO
-Implementación*/
-
 class DF {
 private:
 	
-	long long numFilas;
-	long long numColumnas;
+	long long numFilas = 0;
+	long long numColumnas=0;
 
 public:
 	vector<Fila*>* Filas;
@@ -16,7 +13,6 @@ public:
 
 	DF() {
 		Filas = new vector<Fila*>;
-		numFilas = 0;
 		Columnas = new vector<Columna*>;
 		agregarColumnaString();
 		agregarColumnaLong();
@@ -24,9 +20,23 @@ public:
 		agregarColumnaBool();
 	}
 
-	void agregarFila(Fila* f) {
-		Filas->push_back(f);
+	void agregarFila() {
+		long long ind = 0;
+		Fila* aux = new Fila(ind);
+		Filas->push_back(aux);
+		for (long long i = 0; i < numColumnas; i++) {
+			if (Columnas->at(i)->getTipo() == "String")
+				aux->setPunteroString((ColumnaString*)Columnas->at(i));
+			if (Columnas->at(i)->getTipo() == "Long")
+				aux->setPunteroLong((ColumnaLong*)Columnas->at(i));
+			if (Columnas->at(i)->getTipo() == "Double")
+				aux->setPunteroDouble((ColumnaDouble*)Columnas->at(i));
+			if (Columnas->at(i)->getTipo() == "Bool")
+				aux->setPunteroBool((ColumnaBool*)Columnas->at(i));
+		}
+		aux->AsignarDatos();
 		numFilas++;
+		ind++;
 	}
 
 	void agregarColumnaString() {
@@ -50,7 +60,7 @@ public:
 	}
 
 	void mostrar() { //Borrar más adelante etc
-		cout << "String\tLong\tDouble\tBool" << endl;
+		cout << "String \t Long \t Double \t Bool" << endl; //Falta hacer que se alineen bien los nombres de las columnas
 		for (long long i = 0; i < numFilas; i++) {
 			Filas->at(i)->mostrar();
 		}
