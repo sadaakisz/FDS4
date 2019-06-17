@@ -16,7 +16,7 @@ private:
 	ColumnaBool		*ColBool;
 
 public:
-	Fila(int ind) : indice(ind) {
+	Fila(int ind) : indice(ind) {//Constructor para una fila vacía
 		datoString	= "";
 		datoLong	= NULL;
 		datoDouble	= NULL;
@@ -46,7 +46,7 @@ public:
 		delete ColBool	;
 	}
 
-	void AsignarDatos() {
+	void AsignarDatos() { //Almacena en la fila los datos de sus correspondientes punteros
 		if (ColString != nullptr)
 			datoString = ColString->getDato(this->indice);
 		if (ColLong != nullptr)
@@ -82,7 +82,7 @@ public:
 		this->ColBool = CB;
 	}
 
-	void mostrar() { //Eliminar más adelante, hacer lambda en Source.cpp
+	void mostrar() { //Se eliminará más adelante, al hacer lambda en Source.cpp
 		cout << "| " << datoString << " |\t" << "| " << datoLong << " |\t" << "| " << datoDouble << " |\t" << "| " << datoBool << " |" << endl;
 	}
 

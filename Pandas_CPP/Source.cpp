@@ -1,11 +1,11 @@
 #include <iostream>
 #include <conio.h>
-#include "Driver.h"
+//#include "Driver.h"
 #include "DataFrame2.h"
 #include <ctime>
 using namespace std;
 int main() {
-	srand(time(NULL));
+	srand(time(NULL)); //Para crear valores aleatorios
 	/*
 	dataframe* d1 = new dataframe();
 	row* r1 = new row(0);
@@ -43,7 +43,11 @@ int main() {
 	//
 	////cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
 	//driver1->print();
-	
+
+	//Código que se utilizaba con las clases anteriores (Cell.h, Row.h, Dataframe.h) se conserva porque
+	//posteriormente se usará la parte de manejo de archivos
+
+
 	DF *dataF = new DF();
 	dataF->agregarFila();
 	dataF->agregarFila();

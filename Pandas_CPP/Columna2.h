@@ -9,8 +9,10 @@ protected:
 public:
 	Columna(string tipo) : tipoDeDato(tipo) {}
 
-	string getTipo() { return tipoDeDato; }			//Devuelve el "nombre" de la columna  El nombre de una columna indica que tipo de datos contiene
-	void setTipo(string t) { this->tipoDeDato = t; } //Cambia el "nombre" de la columna
+	string getTipo() { return tipoDeDato; }			//Retorna el "nombre" de la columna. El nombre de una columna 
+													//indica qué tipo de datos contiene
+
+	void setTipo(string t) { this->tipoDeDato = t; } //Permite cambiar el nombre de la columna
 	~Columna(){}
 };
 
@@ -20,9 +22,9 @@ private:
 public:
 	ColumnaString(): Columna("String") {
 		datosString = new vector<string>;
-					  //Agregando 2 "palabras" aleatorias con propósitos de prueba
-		agregar("asdf");
-		agregar("jklm");
+					  //Agregando 2 "palabras" con propósitos de prueba
+		agregar("Hola");
+		agregar("mundo");
 	}
 
 	~ColumnaString() {
@@ -44,8 +46,8 @@ private:
 public:
 	ColumnaLong():Columna("Long") {
 		datosLong = new vector<long long>;
-		agregar(rand() % 1000000); //Agregando 2 long longs aleatorios con propósitos de prueba
-		agregar(rand() % 1000000);
+		agregar(rand()% 1000000000); //Se agregan 2 long longs con propósitos de prueba
+		agregar(2000000000); //
 	}
 
 	~ColumnaLong() {
@@ -68,7 +70,7 @@ private:
 public:
 	ColumnaDouble(): Columna("Double") {
 		datosDouble = new vector<double>;
-		agregar((rand() % 100000)+ rand()%11/10.0 );  //Agregando 2 doubles aleatorios con propósitos de prueba
+		agregar((rand() % 100000)+ rand()%11/10.0 );  //Se agregan 2 doubles aleatorios con propósitos de prueba
 		agregar((rand() % 100000) + rand() % 11 / 10.0);
 	}
 
@@ -92,8 +94,8 @@ private:
 public:
 	ColumnaBool() : Columna("Bool") {
 		datosBool = new vector<bool>;
-		agregar(rand() % 2);
-		agregar(rand() % 2);
+		agregar(rand() % 2);			//Se agregan valores de tipo bool
+		agregar(rand() % 2);			//aleatorios (posible 0 o 1) con propósitos de prueba
 	}
 
 	~ColumnaBool() {

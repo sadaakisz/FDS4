@@ -14,8 +14,8 @@ public:
 	DF() {
 		Filas = new vector<Fila*>;
 		Columnas = new vector<Columna*>;
-		agregarColumnaString();
-		agregarColumnaLong();
+		agregarColumnaString();			//En este caso se está agregando una columna de
+		agregarColumnaLong();			//cada tipo para realizar pruebas
 		agregarColumnaDouble();
 		agregarColumnaBool();
 	}
@@ -59,9 +59,9 @@ public:
 		numColumnas++;
 	}
 
-	void mostrar() { //Borrar más adelante etc
+	void mostrar() { //Se eliminará más adelante, se hará un lambda en Source.cpp
 		cout << "String \t\t Long \t\t Double \t\t Bool" << endl; //Falta hacer que se alineen bien los nombres de las columnas
-		for (long long i = 0; i < numFilas; i++) {
+		for (long long i = 0; i < numFilas; i++) {				  //con los datos
 			Filas->at(i)->mostrar();
 		}
 	}
