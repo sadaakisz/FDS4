@@ -48,6 +48,14 @@ public:
 		trees[colname] = t; //mapa de árboles
 	}*/
 
+	/*DF* sort(string colname) {
+		colmap* nCols = new colmap();
+		*nCols = this->Columnas;
+		DF* nDF=nDF(nCols);
+		nDF->rows = this->rows;
+		quicksort<Fila*, string>(nDF->rows, [=](Fila* r) {return r->getdata(colname); })
+	}*/
+
 
 	void agregarFila() {
 		
