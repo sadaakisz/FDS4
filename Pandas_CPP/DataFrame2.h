@@ -45,7 +45,7 @@ public:
 		for (auto row : this->rows) {
 			t->Add(row);
 		}
-		idx[colname] = t; //mapa de árboles
+		trees[colname] = t; //mapa de árboles
 	}*/
 
 
