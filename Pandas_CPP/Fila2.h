@@ -4,7 +4,8 @@
 using namespace std;
 class Fila {
 private:
-	long long indice=0;
+	long long indice=0;	//solo debería tener indice
+	//map<string, Col*>& cols;
 	string datoString;
 	long long datoLong;
 	double datoDouble;
@@ -26,6 +27,14 @@ public:
 		ColDouble	=nullptr;
 		ColBool		=nullptr;
 	}
+
+	//typedef map<string, Col*> colmap;
+
+	//Fila(map<string>, Col*>* cols): cols(cols){}
+
+	/*void getData(string name) {
+	return (*cols)[name][idx];
+	}*/
 
 	/*Fila(int ind, string str, double doub, long long lon, bool boo, ColumnaString *colS, ColumnaLong *colL,
 		ColumnaDouble *colD, ColumnaBool *colB) : indice(ind), datoString(str), datoLong(lon), datoDouble(doub), datoBool(boo),

@@ -10,6 +10,7 @@ private:
 public:
 	vector<Fila*>* Filas;
 	vector<Columna*>* Columnas;
+	//map<string, Col*> cols
 
 	DF() {
 		Filas = new vector<Fila*>;
@@ -19,6 +20,34 @@ public:
 		agregarColumnaDouble();
 		agregarColumnaBool();
 	}
+
+	//DF* select(vector<string> colNames) { //Retorna un DataFrame. Para escoger de las columnas totales que se tienen cuáles se quieren seleccionar. Puede ser en cualquier orden
+	//	colmap* nCols = new colmap();
+	//	for (auto cn : colNames) {
+	//		nCols[cn] = cols[cn];
+	//	}
+	//	DF* nuevoDF(nCols);
+	//	nuevoDF->rows = this->rows;
+	//}
+
+	/*DF* filter(string numcol1, string op1, string val1, string numcol2="", string op2="", string val2=""){
+		colmap* nCols = new colmap();
+		*nCols = this->Columnas;
+		vector<Fila*> nFilas;
+		for (auto r : this->Filas) {
+			if (compare(numCol1, op1, val1, r) && compare(numcol2, opc2, val2, r))
+				nFilas.push_back(r); 
+		}
+	}*/
+
+	/*void index(string colname) {
+		AVLTree<Fila*, string>* t = new AVLTree<Row* r, string>([=](Row* r){ return r->getdata(colname) });
+		for (auto row : this->rows) {
+			t->Add(row);
+		}
+		idx[colname] = t; //mapa de árboles
+	}*/
+
 
 	void agregarFila() {
 		
