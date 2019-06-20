@@ -52,7 +52,7 @@ int main() {
 	dataF->agregarFila();
 	dataF->agregarFila();
 	dataF->mostrar();
-
+	
 	_getch();
 	return 0;
 }

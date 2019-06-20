@@ -10,6 +10,7 @@ public:
 	Columna(string tipo) : tipoDeDato(tipo) {}
 
 	string getTipo() { return tipoDeDato; }			//Retorna el "nombre" de la columna. El nombre de una columna 
+							
 													//indica qué tipo de datos contiene
 
 	void setTipo(string t) { this->tipoDeDato = t; } //Permite cambiar el nombre de la columna
