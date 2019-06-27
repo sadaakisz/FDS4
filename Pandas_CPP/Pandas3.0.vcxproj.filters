@@ -20,19 +20,25 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Columna.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Fila.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="Dataframe.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Driver.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Columna2.h">
+    <ClInclude Include="FilterMethods.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="DataFrame2.h">
+    <ClInclude Include="SortMethods.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Fila2.h">
+    <ClInclude Include="IndexMethods.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

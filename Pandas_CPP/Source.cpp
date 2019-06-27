@@ -1,58 +1,206 @@
 #include <iostream>
+#include <locale.h>
 #include <conio.h>
-//#include "Driver.h"
-#include "DataFrame2.h"
-#include <ctime>
+#include "Driver.h"
 using namespace std;
-int main() {
-	srand(time(NULL)); //Para crear valores aleatorios
+using namespace System;
+Driver d1;
+long long idxDF = -1;
+void e() {
+	cout << endl;
+}
+void importF() {
+	string filename;
+	cout << "\tIngrese el nombre del archivo a importar: ";
+	cin >> filename;
+	while (!d1.findFile(filename)) {
+		e(), cout << "\tError! Ingrese un nombre de archivo existente: ";
+		cin >> filename;
+	}
+	e();
+	d1.addFile(filename), idxDF++;
+	d1.getDF(idxDF)->printD(), e();
+}
+void logo() {
+	e(), cout << "     ________________________________________________________________________", e(), cout << "    |                                                                        |", e();
+	cout << "    |   ______                    __________                                 |", e();
+	cout << "    |   ___  / _____________ ________  ____/____________ _______ ________    |", e();
+	cout << "    |   __  /  _  __ \\_  __ `/  _ \\_  /_   __  ___/  __ `/_  __ `__ \\  _ \\   |", e();
+	cout << "    |   _  /___/ /_/ /  /_/ //  __/  __/   _  /   / /_/ /_  / / / / /  __/   |", e();
+	cout << "    |   /_____/\\____/_\\__, / \\___//_/      /_/    \\__,_/ /_/ /_/ /_/\___/     |", e();
+	cout << "    |                /____/                                                  |", e();
+	cout << "    |________________________________________________________________________|", e(), e(), e();
+}
+void intro() {
+	Console::SetWindowPosition(0, 0);
+	Console::SetWindowSize(137, 35);
+	string filename;
+	//setlocale(LC_ALL, "spanish");
+	logo();
+	cout << "\tIngrese el nombre del archivo a importar: ";
+	cin >> filename;
+	while (!d1.findFile(filename)) {
+		e(), cout << "\tError! Ingrese un nombre de archivo existente: ";
+		cin >> filename;
+	}
+	e();
+	d1.addFile(filename), idxDF++;
+	d1.getDF(idxDF)->printD(), e();
+}
+void mostrar() {
+	cout << "Introduzca el indice del dataframe a mostrar: ";
+	e(), d1.printvDF(), e(), e();
+	cin >> idxDF;
+	d1.getDF(idxDF-1)->printD(), e();
+}
+void indexar() {
+	string nombreColumna;
+	cout << "Introduzca el indice del dataframe a indexar: ";
+	e(), d1.printvDF(), e();
+	cin >> idxDF, e();
+	cout << "Introduzca el nombre de la columna del dataframe a indexar: ", e(), e();
+	cin >> nombreColumna, e();
+	d1.index(idxDF-1, nombreColumna);
+	cout << "Indexado exitoso! La altura del arbol generado es: ";
+	cout<< d1.vDF[idxDF - 1]->getMapTree()[nombreColumna]->Height(), e(), e();
+}
+void ordenar() {
+	string nombreColumna;
+	cout << "Introduzca el indice del dataframe a ordenar: ";
+	e(), d1.printvDF(), e();
+	cin >> idxDF, e();
+	cout << "Introduzca el nombre de la columna del dataframe a ordenar: ", e(), e();
+	cin >> nombreColumna, e();
+	d1.vDF.push_back(d1.mergesort(idxDF - 1, nombreColumna)), idxDF++;
+	cout << "Ordenamiento exitoso! Imprimiendo el nuevo dataframe generado: ";
+	d1.vDF[d1.vDF.size() - 1]->printD(), e(), e();
+}
+void seleccionar() {
+	vector<string>nCols;
+	string col;
+	cout << "Introduzca el indice del dataframe a seleccionar: ";
+	e(), d1.printvDF(), e();
+	cin >> idxDF, e();
+	cout << "Ingrese el numero de columnas a seleccionar: ", e();
+	int numero;
+	cin >> numero;
+	for (int i = 0; i < numero; i++) {
+		e(), cout << "Nombre de la columna "<<i+1<< ": ";
+		cin >> col;
+		nCols.push_back(col);
+	}
+	e(), d1.vDF.push_back(d1.select(idxDF - 1, nCols)), idxDF++;
+	d1.vDF[d1.vDF.size() - 1]->printD(), e(), e();
+}
+void filtrar() {
+	string nc1, op1, val1, nc2="", op2="", val2="";
+	int dos = 0;
+	cout << "Introduzca el indice del dataframe a filtrar: ";
+	e(), d1.printvDF(), e();
+	cin >> idxDF, e();
+	cout << "Ingrese el numero de columnas a filtrar: ", e();
+	cin >> dos;
+	cout << "Ingrese el nombre de la columna " << dos-1 << " a filtrar: ", e();
+	cin >> nc1, e();
+	cout << "Ingrese la operacion " << dos-1 << " para filtrar: ", e();
+	cin >> op1, e();
+	cout << "Ingrese el valor de la operacion " << dos-1 << " para filtrar: ", e();
+	cin >> val1, e();
+	if (dos==2) {
+		cout << "Ingrese el nombre de la columna "<<dos<<" a filtrar: ", e();
+		cin >> nc2, e();
+		cout << "Ingrese la operacion " << dos << " para filtrar: ", e();
+		cin >> op2, e();
+		cout << "Ingrese el valor de la operacion " << dos << " para filtrar: ", e();
+		cin >> val2, e();
+	}
+	d1.vDF.push_back(d1.filter(idxDF-1, nc1, op1, val1, nc2, op2, val2));
+	d1.vDF[d1.vDF.size()-1]->printD(), e(), e();
+}
+void exportF() {
+	string nombreDF;
+	cout << "Introduzca el indice del dataframe a exportar: ";
+	e(), d1.printvDF(), e();
+	cin >> idxDF, e();
+	cout << "Ingrese el nombre del archivo a exportar: ", e();
+	cin >> nombreDF;
+	d1.exportFile(d1.vDF[idxDF-1], nombreDF);
+}
+void opciones() {
+	cout << "\tOpciones:", e(), e();
+	cout << "\t1. Importar archivo", e();
+	cout << "\t2. Mostrar Dataframe", e();
+	cout << "\t3. Indexar Dataframe", e();
+	cout << "\t4. Ordenar Dataframe", e();
+	cout << "\t5. Seleccionar Elementos", e();
+	cout << "\t6. Filtrar datos", e();
+	cout << "\t7. Exportar Dataframe", e();
+	cout << "\t8. Salir del programa", e(), e();
+}
+void menu() {
+	intro();
+	string opcion;
+	while (opcion != "8") {
+		opciones();
+		do {
+			cin >> opcion;
+		} while (opcion[0] < 48 || opcion[0] > 57);
+		Console::Clear();
+		switch (opcion[0])
+		{
+		case '1':
+			importF();
+			break;
+		case '2':
+			mostrar();
+			break;
+		case '3':
+			indexar();
+			break;
+		case '4':
+			ordenar();
+			break;
+		case '5':
+			seleccionar();
+			break;
+		case '6':
+			filtrar();
+			break;
+		case '7':
+			exportF();
+			break;
+		default:
+			break;
+		}
+	}
+}
+void main() {
 	/*
-	dataframe* d1 = new dataframe();
-	row* r1 = new row(0);
-	column* co1 = new column("valor");
-	column* co2 = new column("doble");
-	column* co3 = new column("largo");
-	column* co4 = new column("simbolo");
-	cell* c = new cell("value1");
-	cell* c2 = new cell("8.945");
-	cell* c3 = new cell("51399874603214");
-	cell* c4 = new cell("==+%#*&");
-	r1->push_back(c);
-	r1->push_back(c2);
-	r1->push_back(c3);
-	r1->push_back(c4);
-	d1->push_back(r1);
-	co1->push_back(&c);
-	co2->push_back(&c2);
-	co3->push_back(&c3);
-	co4->push_back(&c4);
-	
-	cout << r1->getIndex() << "\t" << r1->at(0)->getType() << "\t" << r1->at(0)->getDataS()<<endl;
-	cout << r1->getIndex() << "\t" << r1->at(1)->getType() << "\t" << r1->at(1)->getDataD() << endl;
-	cout << r1->getIndex() << "\t" << r1->at(2)->getType() << "\t" << r1->at(2)->getDataS() << endl;
-	cout << r1->getIndex() << "\t" << r1->at(2)->getType() << "\t" << r1->at(2)->getDataL() << endl;
-	cout << r1->getIndex() << "\t" << r1->at(3)->getType() << "\t" << r1->at(3)->getDataS() << endl;
-	cout << co1->getName() << "\t" << co1->at(0)->getDataS() << endl;
-	cout << co2->getName() << "\t" << co2->at(0)->getDataD() << endl;
-	cout << co3->getName() << "\t" << co3->at(0)->getDataL() << endl;
-	cout << co4->getName() << "\t" << co4->at(0)->getDataS() << endl;
-	*/
-	
-	//driver* driver1 = new driver();
-	//driver1->addFile("exampledb.csv"); //
-	//
-	////cout<<driver1->mdataframe.atCo(0)->at(0)->getDataS();
-	//driver1->print();
-
-	//Código que se utilizaba con las clases anteriores (Cell.h, Row.h, Dataframe.h) se conserva porque
-	//posteriormente se usará la parte de manejo de archivos
-
-
-	DF *dataF = new DF();
-	dataF->agregarFila();
-	dataF->agregarFila();
-	dataF->mostrar();
-	
-	_getch();
-	return 0;
+	Driver d1;
+	d1.addFile("exampletsv.tsv");
+	d1.getDF(0)->printD(), e();
+	Dataframe* df2 = new Dataframe(d1.getDF(0));
+	d1.vDF.push_back(df2);
+	d1.getDF(1)->printD(), e();
+	d1.vDF.push_back(d1.filter(0, "Nombres", "mayor", "G", "Apellidos", "contenido", "v"));
+	d1.getDF(2)->printD(), e();
+	vector<string>nCols;
+	nCols.push_back("Edad");
+	nCols.push_back("Vivo");
+	d1.vDF.push_back(d1.select(0,nCols));
+	d1.getDF(3)->printD(), e();
+	d1.exportFile(d1.getDF(2), "Edad_Vivo.tsv");
+	d1.vDF.push_back(d1.mergesort(0, "Apellidos"));
+	d1.getDF(4)->printD(), e();
+	d1.vDF.push_back(d1.mergesort(0, "Edad"));
+	d1.getDF(5)->printD(), e();
+	d1.index(0, "Apellidos");
+	//d1.vDF[0]->getMapTree()["Apellidos"]->getNode()->e;
+	e();
+	cout << d1.vDF[0]->getMapTree()["Apellidos"]->Height(), e();
+	d1.index(2, "Apellidos");
+	e();
+	cout << d1.vDF[2]->getMapTree()["Apellidos"]->Height(), e();
+	_getch();*/
+	menu();
 }
